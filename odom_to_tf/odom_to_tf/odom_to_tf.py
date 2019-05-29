@@ -3,6 +3,7 @@ import math
 import rclpy
 from rclpy.clock import Clock
 from rclpy.node import Node
+from rclpy.qos import QoSProfile
 from tf2_msgs.msg import TFMessage
 from geometry_msgs.msg import Vector3
 from geometry_msgs.msg import Quaternion
@@ -20,8 +21,8 @@ class OdomToTf(Node):
         self.last_orientation.z = 0.0
         self.last_orientation.w = 1.0
 
-        self.sub_robot_pose = self.create_subscription(Vector3, "/robot_pose", self.robot_pose_callback)
-        self.pub_tf = self.create_publisher(TFMessage, "/tf")
+        self.sub_robot_pose = self.create_subscription(Vector3, "/robot_pose", self.robot_pose_callback, QoSProfile(depth=10))
+        self.pub_tf = self.create_publisher(TFMessage, "/tf", QoSProfile(depth=10))
 
         self.tf_timer = self.create_timer(0.05, self.tf_timer_callback)
 

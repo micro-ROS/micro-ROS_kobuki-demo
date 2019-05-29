@@ -1,6 +1,7 @@
 import math
 
 import rclpy
+from rclpy.qos import QoSProfile
 from rclpy.clock import Clock
 from rclpy.node import Node
 from geometry_msgs.msg import Vector3
@@ -10,7 +11,7 @@ class CircleOdomPublisher(Node):
     def __init__(self):
         super().__init__('circle_odom_publisher')
 
-        self.pub_robot_pose = self.create_publisher(Vector3, "/robot_pose")
+        self.pub_robot_pose = self.create_publisher(Vector3, "/robot_pose", QoSProfile(depth=10))
 
         self.angle = 0.0
 
