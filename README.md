@@ -10,7 +10,7 @@ In detail, this repository contains the following ROS 2 and micro-ROS packages:
 
 * [micro-ros_kobuki_demo_remote](micro-ros_kobuki_demo_remote/) provides launch files to start teleop_twist_joy, rviz2, robot_state_publisher and the odom_to_tf node.
 * [micro-ros_kobuki_demo_robot-description](micro-ros_kobuki_demo_robot-description/) provides the URDF and meshes and textures for the Kobuki as well as the Olimex board.
-* _The port of the [thin_kobuki driver](https://github.com/Lab-RoCoCo/thin_drivers/blob/master/thin_kobuki/) to micro-ROS is located in a separate repository at [https://github.com/micro-ROS/apps/tree/demo/kobuki/examples/kobuki](https://github.com/micro-ROS/apps/tree/demo/kobuki/examples/kobuki)._
+* _The port of the [thin_kobuki driver](https://github.com/Lab-RoCoCo/thin_drivers/blob/master/thin_kobuki/) to micro-ROS is located in a separate repository at [https://github.com/micro-ROS/nuttx_apps/tree/demo/safe_kobuki/examples/kobuki](https://github.com/micro-ROS/nuttx_apps/tree/demo/safe_kobuki/examples/kobuki)._ Please note that it has not been ported to Foxy yet.
 
 Technical information on these packages is given in the README.md files in the corresponding subfolders.
 
